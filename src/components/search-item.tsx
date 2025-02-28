@@ -12,7 +12,7 @@ interface ISearchItem {
 
 export default function SearchItem({ data }: ISearchItem) {
   return (
-    <AccordionItem value={data.id.toString()}>
+    <AccordionItem value={data.id.toString()} data-testid="search-item">
       <AccordionTrigger>{data.login}</AccordionTrigger>
       <AccordionContent className="flex flex-col gap-2">
         {data.repository?.length ? (

@@ -20,7 +20,11 @@ interface ISearchForm {
 export default function SearchForm({ form, onSubmit, isLoading }: ISearchForm) {
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="md:flex md:gap-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="md:flex md:gap-4"
+        data-testid="search-form"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -28,7 +32,11 @@ export default function SearchForm({ form, onSubmit, isLoading }: ISearchForm) {
             <FormItem className="md:w-full">
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="Enter username" {...field} />
+                <Input
+                  placeholder="Enter username"
+                  data-testid="username-input"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -38,6 +46,7 @@ export default function SearchForm({ form, onSubmit, isLoading }: ISearchForm) {
           type="submit"
           className="w-full mt-4 md:w-fit md:mt-8"
           loading={isLoading}
+          data-testid="submit-button"
         >
           Search
         </Button>

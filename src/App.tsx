@@ -18,6 +18,7 @@ function App() {
 
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
+    mode: "onChange",
     defaultValues: {
       username: "",
     },
@@ -60,10 +61,10 @@ function App() {
       <Navbar />
       <main className="container py-6 max-w-screen-md">
         <SearchForm form={form} onSubmit={onSubmit} isLoading={isFetching} />
-        {state.q ? (
+        {state.q && data?.length ? (
           <p className="my-4 text-gray-500">Showing users for "{state.q}"</p>
         ) : null}
-        <SearchList data={data ?? []} isLoading={isFetching} />
+        <SearchList data={data ?? []} isLoading={isFetching} q={state.q} />
       </main>
     </Fragment>
   );

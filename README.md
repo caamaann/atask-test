@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# GitHub Lite - Search GitHub Users and Repositories
+A simple GitHub user and repository search app built with ReactJS and Vite. This project allows users to search for GitHub usernames and view their associated repositories.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+Search for GitHub users by username.
+View the list of repositories for a specific user.
+Built with ReactJS and Vite for fast and modern development.
 
-Currently, two official plugins are available:
+# Tech Stack
+- **Frontend**: ReactJS, Typescript, ShadcnUi, Tailwind, React hook form, Zod, React-query
+- **Unit Test**: Vitest
+- **Build Tool**: Vite
+- **API**: GitHub REST API (to fetch user and repository data)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Demo
+[Link Demo](https://atask-test-gilt.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Installation
+Clone the repository:
+```bash
+git clone https://github.com/caamaann/atask-test
+```
+Navigate to the project folder:
+```bash
+cd atask-test
+```
+Install the dependencies:
+```bash
+npm install
+```
+Run the app locally:
+```bash
+npm run dev
+````
+Visit http://localhost:5173 to see the app in action.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Running Tests
+To run tests, run the following command
+```bash
+  npm run test:run
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# Usage
+Once the app is running, you can enter a GitHub username in the search bar.
+After submitting the search, the app will fetch the user's repositories and display them below the search bar.
+Each repository will include its name and description.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+# Screenshot
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/adcc9883-3994-4c32-aea6-43909a3efd12" />
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+# Contributing
+Feel free to fork this repository and submit pull requests. If you encounter any issues, feel free to open an issue on GitHub.
+
